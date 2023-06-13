@@ -4,16 +4,16 @@ import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
-  return (
-    <div id="App">
-      <header>
-        <h1>Chat between Vladimir and Estragon</h1>
-      </header>
-      <main>
-        <ChatLog entries={chatMessages}/>
-      </main>
-    </div>
-  );
+    return (
+        <div id="App">
+            <header>
+                <h1>Chat between Vladimir and Estragon</h1>
+            </header>
+            <main>
+                <ChatLog entries={chatMessages}/>
+            </main>
+        </div>
+    );
 };
 
 export default App;
