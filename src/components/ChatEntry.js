@@ -3,9 +3,9 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = (props) => {
+const ChatEntry = ({id, sender, body, timeStamp, liked, local}) => {
     const formatMsgs = () => {
-        if (props.sender === props.senders[0]) {
+        if (sender === local) {
             return 'chat-entry local'
         } else {
             return 'chat-entry remote'
@@ -14,10 +14,10 @@ const ChatEntry = (props) => {
 
     return (
         <div className={formatMsgs()}>
-            <h2 className="entry-name">{props.sender}</h2>
+            <h2 className="entry-name">{sender}</h2>
             <section className="entry-bubble">
-                <p>{props.body}</p>
-                <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
+                <p>{body}</p>
+                <p className="entry-time"><TimeStamp time={timeStamp}/></p>
                 <button className="like">🤍</button>
             </section>
         </div>
@@ -25,7 +25,7 @@ const ChatEntry = (props) => {
 };
 
 ChatEntry.propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.number,
     sender: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
     timeStamp: PropTypes.string.isRequired,
