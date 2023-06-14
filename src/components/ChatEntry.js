@@ -3,22 +3,30 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = ({id, sender, body, timeStamp, liked, local}) => {
-    const formatMsgs = () => {
-        if (sender === local) {
-            return 'chat-entry local'
-        } else {
-            return 'chat-entry remote'
-        }
-    };
+const ChatEntry = ({id, sender, body, timeStamp, liked, local, onUpdateEntry}) => {
+    const formatMsgs = sender === local ? 'chat-entry local' : 'chat-entry remote';
+
+    const onLikeBtnClick = () => {
+        const updatedEntry = {
+            id: id,
+            sender: sender,
+            body: body,
+            timeStamp: timeStamp,
+            liked: !liked
+        };
+
+        onUpdateEntry(updatedEntry);
+    }
+
+    const heartColor = liked ? '❤️' : '🤍';
 
     return (
-        <div className={formatMsgs()}>
+        <div className={formatMsgs}>
             <h2 className="entry-name">{sender}</h2>
             <section className="entry-bubble">
                 <p>{body}</p>
                 <p className="entry-time"><TimeStamp time={timeStamp}/></p>
-                <button className="like">🤍</button>
+                <button className="like" onClick={onLikeBtnClick}>{heartColor}</button>
             </section>
         </div>
     );
@@ -29,7 +37,8 @@ ChatEntry.propTypes = {
     sender: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
     timeStamp: PropTypes.string.isRequired,
-    liked: PropTypes.bool.isRequired
+    liked: PropTypes.bool,
+    onUpdate: PropTypes.func.isRequired
 };
 
 export default ChatEntry;
