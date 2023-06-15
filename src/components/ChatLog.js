@@ -8,6 +8,7 @@ const ChatLog = ({entries, local, onUpdateEntry}) => {
         return (
             <ChatEntry
                 key={entry.id}
+                id={entry.id}
                 sender={entry.sender}
                 body={entry.body}
                 timeStamp={entry.timeStamp}
@@ -16,10 +17,10 @@ const ChatLog = ({entries, local, onUpdateEntry}) => {
                 onUpdateEntry={onUpdateEntry}
             />
         );
-    })
+    });
 
     return (
-        <section>{chatComponents}</section>
+        <section className='chat-log'>{chatComponents}</section>
     );
 };
 
