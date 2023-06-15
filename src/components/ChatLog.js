@@ -3,7 +3,7 @@ import './ChatLog.css';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
-const ChatLog = ({entries, local, onUpdateEntry}) => {
+const ChatLog = ({entries, onUpdateEntry, local, localColor, remoteColor}) => {
     const chatComponents = entries.map(entry => {
         return (
             <ChatEntry
@@ -13,8 +13,10 @@ const ChatLog = ({entries, local, onUpdateEntry}) => {
                 body={entry.body}
                 timeStamp={entry.timeStamp}
                 liked={entry.liked}
-                local={local}
                 onUpdateEntry={onUpdateEntry}
+                local={local}
+                localColor={localColor}
+                remoteColor={remoteColor}
             />
         );
     });
@@ -32,7 +34,10 @@ ChatLog.propTypes = {
         timeStamp: PropTypes.string.isRequired,
         liked: PropTypes.bool,
     })),
-    onUpdateEntry: PropTypes.func
+    onUpdateEntry: PropTypes.func,
+    local: PropTypes.string.isRequired,
+    localColor: PropTypes.string.isRequired,
+    remoteColor: PropTypes.string.isRequired
 };
 
 export default ChatLog;
