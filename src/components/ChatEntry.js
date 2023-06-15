@@ -18,15 +18,13 @@ const ChatEntry = ({id, sender, body, timeStamp, liked, local, onUpdateEntry}) =
         onUpdateEntry(updatedEntry);
     }
 
-    const heartColor = liked ? '❤️' : '🤍';
-
     return (
         <div className={formatMsgs}>
             <h2 className="entry-name">{sender}</h2>
             <section className="entry-bubble">
                 <p>{body}</p>
                 <p className="entry-time"><TimeStamp time={timeStamp}/></p>
-                <button className="like" onClick={onLikeBtnClick}>{heartColor}</button>
+                <button className="like" onClick={onLikeBtnClick}>{liked ? '❤️' : '🤍'}</button>
             </section>
         </div>
     );
@@ -37,8 +35,8 @@ ChatEntry.propTypes = {
     sender: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
     timeStamp: PropTypes.string.isRequired,
-    liked: PropTypes.bool,
-    onUpdate: PropTypes.func.isRequired
+    liked: PropTypes.bool.isRequired,
+    onUpdate: PropTypes.func
 };
 
 export default ChatEntry;
