@@ -35,7 +35,11 @@ const App = () => {
     return (
         <div id='App'>
             <header>
-                <h1>Chat between {localUser} and {remoteUser}</h1>
+                <h1>Chat between
+                    &nbsp;<span className={localColor}>{localUser}</span>
+                    &nbsp;and
+                    &nbsp;<span className={remoteColor}>{remoteUser}</span>
+                </h1>
                 <section>
                     <ColorChoice
                         setColorCallback={newColor => setLocalColor(newColor)}
