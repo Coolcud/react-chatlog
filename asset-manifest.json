@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-chatlog/static/css/main.4e40d1ef.css",
+    "main.js": "/react-chatlog/static/js/main.19702ede.js",
+    "index.html": "/react-chatlog/index.html",
+    "main.4e40d1ef.css.map": "/react-chatlog/static/css/main.4e40d1ef.css.map",
+    "main.19702ede.js.map": "/react-chatlog/static/js/main.19702ede.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e40d1ef.css",
+    "static/js/main.19702ede.js"
+  ]
+}
