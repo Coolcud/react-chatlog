@@ -13,7 +13,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "homepage": "https://coolcud.github.io/react-chatlog",
+    "private": "false",
+    "homepage": "https://coolcud.github.io/react-chatlog/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
