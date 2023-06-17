@@ -38,9 +38,9 @@ ChatLog.propTypes = {
     liked: PropTypes.bool,
   })),
   onUpdateEntry: PropTypes.func,
-  local: PropTypes.string.isRequired,
-  localColor: PropTypes.string.isRequired,
-  remoteColor: PropTypes.string.isRequired
+  local: PropTypes.string,
+  localColor: PropTypes.string,
+  remoteColor: PropTypes.string
 };
 
 export default ChatLog;
