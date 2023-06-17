@@ -1,7 +1,8 @@
 {
   "name": "react-chatlog",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://coolcud.github.io/react-chatlog/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -12,11 +13,9 @@
     "react-scripts": "5.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "private": "false",
-    "homepage": "https://coolcud.github.io/react-chatlog/",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
